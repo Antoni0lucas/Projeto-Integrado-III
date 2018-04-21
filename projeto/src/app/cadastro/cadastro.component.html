@@ -1,0 +1,35 @@
+<form class="form-horizontal">
+  <div class="form-group">
+    <label for="inputName" class="col-sm-4 control-label">Name</label>
+    <div class="col-sm-3">
+      <input [(ngModel)]="nome" name="nome" type="text" class="form-control" id="inputName" placeholder="Name">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputEmail" class="col-sm-4 control-label">Email</label>
+    <div class="col-sm-3">
+      <input [(ngModel)]='email' name='email' type="email" class="form-control" id="inputEmail" placeholder="Email">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputPassword" class="col-sm-4 control-label">Password</label>
+    <div class="col-sm-3">
+      <input [(ngModel)]="password" name="password" type="password" class="form-control" id="inputPassword" placeholder="Password">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputCity" class="col-sm-4 control-label">Cidade</label>
+    <div class="col-sm-3">
+      <select [(ngModel)]="cidade" name="cidade" class="col-sm-4 control-label">
+        <option  *ngFor="let cidade of cidades" value= {{cidade.nome}}>
+          {{cidade.nome}}
+        </option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-4 col-sm-10">
+      <button type="submit" class="btn btn-default" (click)="addUsuario($event)">Sign in</button>
+    </div>
+  </div>
+</form>
